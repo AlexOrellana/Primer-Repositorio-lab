@@ -36,6 +36,8 @@ cout << "Respuesta: " << answer << endl;
 
 }else if(opc==2){
 
+double x1,x2,x3,x4,y1,y2,y3,y4;
+
 cout << "Primer punto" << endl;
 cout << "x: ";
 cin >> x1;
@@ -152,6 +154,8 @@ b=distancia(x4,x3,y4,y3);
 c=distancia(x3,x1,y3,y1);
 cout << "Perimetro triangulo 2: " << a+b+c  << endl << endl;
 
+
+
 return 0;
 }
 
@@ -160,7 +164,7 @@ double semiperimetro(double a,double b,double c){
 
 double s;
 
-s = (a+b+c)/2.0
+s = (a+b+c)/2.0;
 
 return s;
 }
