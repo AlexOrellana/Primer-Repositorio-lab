@@ -7,10 +7,11 @@ using std::endl;
 
 //funciones
 double ej1(int x);
-int ej2(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4);
+bool ej2(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4);
 double fac(int i);
 double distancia(int x1,int x2,int y1,int y2);
 double semiperimetro(double a,double b,double c);
+double altura(double deno,double semipe,double a,double b,double c);
 
 //main
 int main(int argc,char* argv[]){
@@ -36,7 +37,7 @@ cout << "Respuesta: " << answer << endl;
 
 }else if(opc==2){
 
-double x1,x2,x3,x4,y1,y2,y3,y4;
+float x1,x2,x3,x4,y1,y2,y3,y4;
 
 cout << "Primer punto" << endl;
 cout << "x: ";
@@ -74,6 +75,8 @@ cin >> y4;
 cout << endl;
 cout << endl;
 
+ej2(x1,x2,x3,x4,y1,y2,y3,y4);
+
 }else{
  cout << "Opcion no valida" << endl;
 }
@@ -103,8 +106,18 @@ if(i==1){
  return resp;
 }
 
+//altura
+double altura(double deno,double semipe,double a,double b,double c){
+
+double h;
+
+h=(2/deno)*(sqrt((semipe)*(semipe-a)*(semipe-b)*(semipe-c)));
+
+return h;
+}
+
 //funcion segundo ejer.
-int ej2(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4){
+bool ej2(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4){
 
 double temp;
 
@@ -154,9 +167,32 @@ b=distancia(x4,x3,y4,y3);
 c=distancia(x3,x1,y3,y1);
 cout << "Perimetro triangulo 2: " << a+b+c  << endl << endl;
 
+cout << "Las alturas del triangulo 1 miden: " << endl;
+a=distancia(x1,x2,y1,y2);
+b=distancia(x2,x3,y2,y3);
+c=distancia(x3,x1,y3,y1);
+double temp2;
+temp2 = semiperimetro(a,b,c);
+temp=altura(a,temp2,a,b,c);
+cout << "Lado 1: " << temp << endl;
+temp=altura(b,temp2,a,b,c);
+cout << "Lado 2: " << temp << endl;
+temp=altura(c,temp2,a,b,c);
+cout << "Lado 3: " << temp << endl <<endl;
 
+cout << "Las alturas del triangulo 2 miden: " << endl;
+a=distancia(x1,x4,y1,y4);
+b=distancia(x4,x3,y4,y3);
+c=distancia(x3,x1,y3,y1);
 
-return 0;
+temp2 = semiperimetro(a,b,c);
+temp=altura(a,temp2,a,b,c);
+cout << "Lado 1: " << temp << endl;
+temp=altura(b,temp2,a,b,c);
+cout << "Lado 2: " << temp << endl;
+temp=altura(c,temp2,a,b,c);
+cout << "Lado 3: " << temp << endl;
+
 }
 
 //semiperimetro
