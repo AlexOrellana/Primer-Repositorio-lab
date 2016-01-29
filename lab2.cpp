@@ -132,10 +132,25 @@ cout << "Lado 2: " << temp << endl << endl;
 temp = distancia(x3,x1,y3,y1);
 cout << "Lado 3: " << temp << endl << endl;
 
-cout << "Semiperimetro triangulo 1: ";
-cout << "Semiperimetro triangulo 2: ";
-cout << "Perimetro triangulo 1: ";
-cout << "Perimetro triangulo 2: ";
+double a,b,c;
+a=distancia(x1,x2,y1,y2);
+b=distancia(x2,x3,y2,y3);
+c=distancia(x3,x1,y3,y1);
+temp = semiperimetro(a,b,c);
+cout << "Semiperimetro triangulo 1: " << temp << endl;
+a=distancia(x1,x4,y1,y4);
+b=distancia(x4,x3,y4,y3);
+c=distancia(x3,x1,y3,y1);
+temp = semiperimetro(a,b,c);
+cout << "Semiperimetro triangulo 2: " << temp << endl;
+a=distancia(x1,x2,y1,y2);
+b=distancia(x2,x3,y2,y3);
+c=distancia(x3,x1,y3,y1);
+cout << "Perimetro triangulo 1: " << a+b+c  << endl;
+a=distancia(x1,x4,y1,y4);
+b=distancia(x4,x3,y4,y3);
+c=distancia(x3,x1,y3,y1);
+cout << "Perimetro triangulo 2: " << a+b+c  << endl << endl;
 
 return 0;
 }
